@@ -14,7 +14,7 @@ by Joseph Buchdahl [@12Xpert](https://twitter.com/12xpert?lang=en)
 * The Wisdom Of The Crowd is a robust method in order to gain long-term betting profits and was first introduced by Joseph Buchdahl [@12Xpert](https://twitter.com/12xpert?lang=en)
 * The method is built on the idea of efficient market hypothesis which is commonly used in financial economics.
 * Sports betting analyst Joseph Buchdahl did a fantastic 20-page article explaining the approach in detail here https://www.football-data.co.uk/The_Wisdom_of_the_Crowd_updated.pdf
-* **This app shows historical bets only.** Bets can be received in real-time (via e-mail). If you're interested please contact me at **contact@bettingiscool.com**
+* **This app shows historical bets only.** Bets can be received in real-time (via e-mail). If you're interested please visit https://bettingiscool.com/the-wisdom-of-the-crowd/ and contact me at **contact@bettingiscool.com**
 """)
 
 # Filters
@@ -31,6 +31,8 @@ unique_countries = list(db.get_unique_countries())
 selected_countries = st.sidebar.multiselect(label='Countries', options=sorted(unique_countries), default=unique_countries)
 unique_leagues = list(db.get_unique_leagues())
 selected_leagues = st.sidebar.multiselect(label='Leagues', options=sorted(unique_leagues), default=unique_leagues)
+
+print(selected_books)
 
 if len(selected_sports) > 0 and len(selected_books) > 0 and len(selected_countries) > 0 and len(selected_leagues) > 0:
 
