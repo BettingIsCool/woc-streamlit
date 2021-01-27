@@ -19,6 +19,20 @@ print(f"Data successfully loaded in {time.time() - start} seconds.")
 
 
 @measure
+def get_max_starts():
+    """ Returns starts of the latest fixture """
+
+    return TABLE_BETS['starts'].max()
+
+
+@measure
+def get_total_bets():
+    """ Returns total number of bets """
+
+    return TABLE_BETS['id'].count()
+
+
+@measure
 def get_unique_sports():
     """ Returns a set of distinct sports """
 
@@ -58,7 +72,7 @@ def get_monthly_stats(year: int, month: int, min_val: float, odds_range: list, b
     """ Returns cumulative data for the specified year & month """
 
     subset = TABLE_BETS[(TABLE_BETS['starts'].dt.year == year) & (TABLE_BETS['starts'].dt.month == month) & (TABLE_BETS['value'] >= min_val) & (TABLE_BETS['odds'] >= odds_range[0]) & (TABLE_BETS['odds'] <= odds_range[1]) & (TABLE_BETS['book'].isin(books)) & (TABLE_BETS['sport'].isin(sports)) & (TABLE_BETS['country'].isin(countries)) & (TABLE_BETS['league'].isin(leagues))]
-    return subset['id'].count(), subset['odds'].mean(), subset['profit'].sum(), subset['clv'].mean()
+    return subset['id'].max(), subset['odds'].mean(), subset['profit'].sum(), subset['clv'].mean()
 
 
 @measure

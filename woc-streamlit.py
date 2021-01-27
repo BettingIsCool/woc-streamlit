@@ -124,3 +124,5 @@ if len(selected_sports) > 0 and len(selected_books) > 0 and len(selected_countri
         df_bets = pd.DataFrame(data=data)
         df_bets = df_bets.sort_values(by=['STARTS'], ascending=True)
         st.dataframe(df_bets)
+
+st.text(f"Updated on {db.get_max_starts()}, {db.get_total_bets()} bets in the database.")
