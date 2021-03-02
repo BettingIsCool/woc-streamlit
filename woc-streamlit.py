@@ -26,7 +26,7 @@ odds_range = st.sidebar.select_slider(label='Odds Range', options=ODDS_INCREMENT
 unique_books = list(db.get_unique_books())
 selected_books = st.sidebar.multiselect(label='Books', options=sorted(unique_books), default='BET365')
 unique_sports = list(db.get_unique_sports())
-selected_sports = st.sidebar.multiselect(label='Sports', options=sorted(unique_sports), default=['SOCCER', 'TENNIS', 'BASKETBALL'])
+selected_sports = st.sidebar.multiselect(label='Sports', options=sorted(unique_sports), default=unique_sports)
 unique_countries = list(db.get_unique_countries())
 selected_countries = st.sidebar.multiselect(label='Countries', options=sorted(unique_countries), default=unique_countries)
 unique_leagues = list(db.get_unique_leagues())
