@@ -32,8 +32,6 @@ selected_countries = st.sidebar.multiselect(label='Countries', options=sorted(un
 unique_leagues = list(db.get_unique_leagues())
 selected_leagues = st.sidebar.multiselect(label='Leagues', options=sorted(unique_leagues), default=unique_leagues)
 
-print(selected_books)
-
 if len(selected_sports) > 0 and len(selected_books) > 0 and len(selected_countries) > 0 and len(selected_leagues) > 0:
 
     # Display monthly stats

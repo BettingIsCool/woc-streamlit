@@ -69,7 +69,7 @@ def get_bets(min_val: float, odds_range: list, books: list, sports: list, countr
 
 @measure
 def get_monthly_stats(year: int, month: int, min_val: float, odds_range: list, books: list, sports: list, countries: list, leagues: list):
-    """ Returns cumulative data for the specified year & month """
+    """ Returns cumulative data for the specified year and month """
 
     subset = TABLE_BETS[(TABLE_BETS['starts'].dt.year == year) & (TABLE_BETS['starts'].dt.month == month) & (TABLE_BETS['value'] >= min_val) & (TABLE_BETS['odds'] >= odds_range[0]) & (TABLE_BETS['odds'] <= odds_range[1]) & (TABLE_BETS['book'].isin(books)) & (TABLE_BETS['sport'].isin(sports)) & (TABLE_BETS['country'].isin(countries)) & (TABLE_BETS['league'].isin(leagues))]
     return subset['id'].count(), subset['odds'].mean(), subset['profit'].sum(), subset['clv'].mean()
