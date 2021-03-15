@@ -11,13 +11,13 @@ incs.append({'min': 50.00, 'max': 100.00, 'value': 2, 'round': 0})
 incs.append({'min': 100.00, 'max': 500.00, 'value': 5, 'round': 0})
 incs.append({'min': 500.00, 'max': 1000.00, 'value': 10, 'round': 0})
 
-ODDS_incs = list()
+ODDS_INCREMENTS = list()
 x = 1
 while x < 1000:
     for increment in incs:
         if increment['max'] > x >= increment['min']:
             if increment['round'] == 0:
                 x = int(x)
-            ODDS_incs.append(round(x + increment['value'], increment['round']))
+            ODDS_INCREMENTS.append(round(x + increment['value'], increment['round']))
             x += round(increment['value'], increment['round'])
             break
