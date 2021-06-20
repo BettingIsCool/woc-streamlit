@@ -47,7 +47,7 @@ if len(selected_sports) > 0 and len(selected_books) > 0 and len(selected_countri
     data.update({'CLV': list()})
 
     for year in (2021, ):
-        for month in range(1, 4):
+        for month in range(1, 7):
             bets, avg_odds, profit, clv = db.get_monthly_stats(year=year, month=month, min_val=min_val, odds_range=odds_range, books=selected_books, sports=selected_sports, countries=selected_countries, leagues=selected_leagues)
 
             if bets and bets is not None and avg_odds and profit and clv:
